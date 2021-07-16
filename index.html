@@ -14,11 +14,19 @@
     player.style.height = (width * 0.5625) + "px";
   }
 </script>
-<iframe id="twitch-chat-embed"
-        src="https://www.twitch.tv/datboisully/chat?darkpopout&parent=https://proalsuwaidi.github.io/DBD/"
-        height="500"
-        width="350">
-</iframe>
+<!-- Load the Twitch embed script -->
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+<!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+<script type="text/javascript">
+  const embed = new Twitch.Embed("twitch-embed", {
+    width: 854,
+    height: 480,
+    channel: "DatBoiSully",
+    // only needed if your site is also embedded on embed.example.com and othersite.example.com 
+     parent: ["https://proalsuwaidi.github.io/DBD/", "proalsuwaidi.github.io/DBD/"]
+  });
+</script>
 
 </body>
 </html>
